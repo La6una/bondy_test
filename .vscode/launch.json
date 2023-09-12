@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "bondy_test_flutter",
+            "cwd": "bondy_test_flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "bondy_test_flutter (profile mode)",
+            "cwd": "bondy_test_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "bondy_test_flutter (release mode)",
+            "cwd": "bondy_test_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
