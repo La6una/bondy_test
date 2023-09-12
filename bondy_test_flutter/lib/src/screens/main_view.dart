@@ -9,7 +9,9 @@ import 'package:http/http.dart' as http;
 import '../entities/location.dart';
 
 class MainView extends StatefulWidget {
-  const MainView({super.key});
+  final String apiKey;
+  
+  const MainView({required this.apiKey, super.key});
 
   @override
   State<MainView> createState() => _MainViewState();
@@ -18,9 +20,6 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   bool _isSearching = false;
   int _currentLocationIndex = 0;
-
-  // API Key
-  final String apiKey = '163lyuzif8ptzefn8zy7ejpj0rqja60fp2upcths';
 
   // Controllers
   TextEditingController _searchController = TextEditingController();
@@ -185,7 +184,7 @@ class _MainViewState extends State<MainView> {
             );
           },
           onSuggestionSelected: (Location suggestion) {
-            locationsCubit.addLocation(suggestion, apiKey);
+            locationsCubit.addLocation(suggestion);
             setState(() {
               _isSearching = false;
             });
@@ -205,7 +204,7 @@ class _MainViewState extends State<MainView> {
         queryParameters: {
           'text': prefix,
           'language': 'en',
-          'key': apiKey,
+          'key': widget.apiKey,
         },
       ),
     );
